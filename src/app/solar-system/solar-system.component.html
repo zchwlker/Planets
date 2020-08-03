@@ -22,7 +22,6 @@
 
 <app-planet-detail [planet] = "selectedPlanet"></app-planet-detail>
 
-
 <h2>Add new planet</h2>
 <div>
   <div>
@@ -34,7 +33,7 @@
   <div>
     <label>
       Radius:
-      <input [(ngModel)] = "newPlanet.radius" placeholder="0" />
+      <input [(ngModel)] = "newPlanet.radius" min="1" max="30"  placeholder="0" />
     </label>
   </div>
   <div>
@@ -55,7 +54,7 @@
       <input [(ngModel)] = "newPlanet.orbitSpeed" placeholder="0" />
     </label>
   </div>
-  <div (click)="onAddPlanet()">
+  <div class="button" (click)="onAddPlanet()">
     Add
   </div>
 </div>

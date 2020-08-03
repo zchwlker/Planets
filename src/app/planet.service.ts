@@ -16,7 +16,7 @@ httpOptions = {
 };
 
   getRandomPlanet(): Observable<Planet>{
-    return this.http.get<Planet>(planetApi);
+    return this.http.get<Planet>(this.planetApi);
   }
 
   constructor(private http: HttpClient) { }
