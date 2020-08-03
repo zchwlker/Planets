@@ -1,0 +1,29 @@
+<div *ngIf="planet">
+  <h2>Edit {{planet.name | uppercase}}</h2>
+  <div><span>id: </span>{{planet.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="planet.name" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>radius:
+      <input [(ngModel)]="planet.radius" type="number" max="30"  placeholder="0"/>
+    </label>
+  </div>
+  <div>
+    <label>color:
+      <input [(ngModel)]="planet.color" placeholder="color"/>
+    </label>
+  </div>
+  <div>
+    <label>spin speed:
+      <input [(ngModel)]="planet.spinSpeed" placeholder="1"/>
+    </label>
+  </div>
+  <div>
+    <label>orbit speed:
+      <input [(ngModel)]="planet.orbitSpeed" placeholder="1"/>
+    </label>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<h2>{{solarSystem.name}}</h2>
+
+<div>
+  <label>name:
+    <input [(ngModel)] = "solarSystem.name" placeholder="name" />
+  </label>
+</div>
+
+<h2>Planets in solar system</h2>
+<ul class="planets">
+  <li *ngFor="let planet of solarSystem.planets"
+  [class.selected] ="planet === selectedPlanet"
+  (click)="onSelectPlanet(planet)">
+       <span class="planetLi">{{planet.id}}</span> {{planet.name}}
+       <span (click)="Replace(planet.id)" class="button replace">Replace</span>
+  </li>
+</ul>
+
+<div class="button" (click)="AddRandom()">
+  add Random planet
+</div>
+
+<app-planet-detail [planet] = "selectedPlanet"></app-planet-detail>
+
+
+<h2>Add new planet</h2>
+<div>
+  <div>
+    <label>
+      Name:
+      <input [(ngModel)] = "newPlanet.name" placeholder="name" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Radius:
+      <input [(ngModel)] = "newPlanet.radius" placeholder="0" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Color:
+      <input [(ngModel)] = "newPlanet.color" placeholder="color" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Spin speed
+      <input [(ngModel)] = "newPlanet.spinSpeed" placeholder="0" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Orbit Speed
+      <input [(ngModel)] = "newPlanet.orbitSpeed" placeholder="0" />
+    </label>
+  </div>
+  <div (click)="onAddPlanet()">
+    Add
+  </div>
+</div>
+
+
+<div class = "sun"> </div>
+<app-planet *ngFor="let planet of solarSystem.planets" [planet] = "planet"></app-planet>
